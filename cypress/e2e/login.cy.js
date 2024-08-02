@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import login from '../../support/pages/login/index'
+import loginPage from '../support/pages/login/loginPage';
 import home from '../../support/pages/home/index'
 
 describe('Página de Login', () => {
@@ -12,19 +12,19 @@ describe('Página de Login', () => {
     context('Login com sucesso', () => {
         
         it('Dado que o usuário entra na página da aplicação', () => {
-            login.validateLoginPage()
+            loginPage.validateLoginPage()
         });
     
         it('E digita credenciais corretas no formulário', () => {
-            login.typeCredentials()
+            loginPage.typeCredentials()
         });
     
         it('E clica no botão de "Login"', () => {
-            login.typeCredentialsAndLogin()
+            loginPage.typeCredentialsAndLogin()
         });
     
         it('Então a página principal (Home) deve aparecer', () => {
-            login.typeCredentialsAndLogin()
+            loginPage.typeCredentialsAndLogin()
             home.homePageIsVisible()
         });
 
@@ -33,11 +33,11 @@ describe('Página de Login', () => {
     context('Login sem sucesso', () => {
         
         it('Dado que o usuário entra na página da aplicação', () => {
-            login.validateLoginPage()
+            loginPage.validateLoginPage()
         });
     
         it('E digita credenciais erradas no formulário', () => {
-            login.typeCredentialsError()
+            loginPage.typeCredentialsError()
         });
     
         it('E clica no botão de "Login"', () => {
