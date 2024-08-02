@@ -1,0 +1,14 @@
+{
+  "name": "vox-saucedemo",
+  "version": "1.0.0",
+  "description": "Teste tecnico Vox Tecnologia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tobias Correa Camilo",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^13.13.2"
+  }
+}
