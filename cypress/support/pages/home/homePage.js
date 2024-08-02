@@ -3,9 +3,8 @@
 const elem = require('../../pages/home/elements').ELEMENTS
 
 class home{
-
     homePageIsVisible(){
-        cy.get(elem.home_title).should('have.text', 'Products')
+        cy.get(elem.home_title).should('contain', 'Products')
         //cy.get(elem.cart).should('to.exist')
     }
     

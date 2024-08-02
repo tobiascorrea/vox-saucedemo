@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
 
 import loginPage from '../support/pages/login/loginPage';
-import home from '../../support/pages/home/index'
+import homePage from '../support/pages/home/homePage';
+
 
 describe('Página de Login', () => {
 
@@ -25,7 +26,7 @@ describe('Página de Login', () => {
     
         it('Então a página principal (Home) deve aparecer', () => {
             loginPage.typeCredentialsAndLogin()
-            home.homePageIsVisible()
+            homePage.homePageIsVisible()
         });
 
     });
@@ -41,12 +42,12 @@ describe('Página de Login', () => {
         });
     
         it('E clica no botão de "Login"', () => {
-            login.typeCredentialsAndLoginError()
+            loginPage.typeCredentialsAndLoginError()
         });
     
         it('Então a página principal (Home) não deve aparecer', () => {
-            login.typeCredentialsAndLoginError()
-            home.homePageIsNotVisible()
+            loginPage.typeCredentialsAndLoginError()
+            homePage.homePageIsNotVisible()
         });
 
     });
@@ -54,19 +55,19 @@ describe('Página de Login', () => {
     context('Logoff', () => {
     
         it('Dado que o usuário esteja logado na apliação', () => {
-            login.validateLoginPage()
-            login.typeCredentialsAndLogin()
-            home.homePageIsVisible()
+            loginPage.validateLoginPage()
+            loginPage.typeCredentialsAndLogin()
+            homePage.homePageIsVisible()
         });
 
         it('E clica na opção "Logoff" dentro do menu hambúrguer no canto superior esquerdo da tela', () => {
-            login.validateLoginPage()
-            login.typeCredentialsAndLogin()
-            login.logoff()
+            loginPage.validateLoginPage()
+            loginPage.typeCredentialsAndLogin()
+            loginPage.logoff()
         });
 
         it('Então ele deverá voltar para a página de login', () => {
-            login.validateLoginPage()
+            loginPage.validateLoginPage()
         });
 
     });

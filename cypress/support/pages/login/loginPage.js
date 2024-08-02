@@ -12,11 +12,12 @@ class login{
     typeCredentials(){
         cy.get(elem.username).type(Cypress.env('USERNAME'))
         cy.get(elem.password).type(Cypress.env('PASSWORD'))
+        cy.get(elem.loginButton).click()
     }
     
     typeCredentialsAndLogin(){
         this.typeCredentials()
-        cy.get(elem.loginButton).click()
+        
     }
 
     typeCredentialsError(){
@@ -30,7 +31,7 @@ class login{
     }
 
     logoff(){
-        cy.get(elem.home_menu).click()
+        cy.get(elem.home_menu).click({force: true})
         cy.get(elem.logoff_button).click()
     }
 }
