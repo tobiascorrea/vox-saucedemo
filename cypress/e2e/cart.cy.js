@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import loginPage from '../../support/pages/login/loginPage'
-import homePage from '../../support/pages/home/homePage'
-import cartPage from '../../support/pages/cart/cartPage'
+import loginPage from '../support/pages/login/loginPage';
+import homePage from '../support/pages/home/homePage';
+import cartPage from '../support/pages/cart/cartPage';
 
 describe('Página do carrinho', () => {
 
