@@ -10,7 +10,7 @@ class overview{
         cy.get(elem.title_page_overview).should('not.to.exist')
     }
 
-    productsAreVisible(){
+    overviewproductsAreVisible(){
         cy.get(elem.itens_chosen).should('be.visible')
     }
 
