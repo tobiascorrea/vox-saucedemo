@@ -14,7 +14,7 @@ describe('Página de checkout', () => {
         loginPage.typeCredentialsAndLogin()
     });
     
-    context('Finalizando uma compra com sucesso', () => {
+    context('Realizando checkout com sucesso', () => {
         
         it('Dado que o usuário acesse a pagina de produtos', () => {
             productPage.homePageIsVisible()

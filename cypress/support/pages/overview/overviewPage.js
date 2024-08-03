@@ -14,12 +14,32 @@ class overview{
         cy.get(elem.itens_chosen).should('be.visible')
     }
 
-    clickButtonCheckout(){
-        cy.get(elem.checkout_button).should('be.visible').click()
+    quantityChosen(){
+        cy.get(elem.quantity_chosen).should('be.visible')
     }
 
-    clickButtonContinue(){
-        cy.get(elem.submit_checkout).should('be.visible').click()
+    informationPayment(){
+        cy.get(elem.information_payment).should('be.visible')
+    }
+
+    shippingInformation(){
+        cy.get(elem.shipping_information).should('be.visible')
+    }
+
+    priceTotal(){
+        cy.get(elem.price_total).should('be.visible')
+    }
+
+    taxa(){
+        cy.get(elem.taxa).should('be.visible')
+    }
+
+    valueTotal(){
+        cy.get(elem.value_total).should('be.visible')
+    }
+
+    buttonFinish(){
+        cy.get(elem.finish_button).should('be.visible').click()
     }
 
 

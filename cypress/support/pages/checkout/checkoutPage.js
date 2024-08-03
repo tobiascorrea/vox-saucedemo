@@ -33,6 +33,18 @@ class checkout {
         cy.get('#last-name').type(lastName);
         cy.get('#postal-code').type(postalCode);
     }
+
+    checkoutCompleteIsVisible() {
+        cy.get(elem.checkout_Complete).should('be.visible').should('contain', 'Thank you for your order!');
+    }
+
+    messageSucess() {
+        cy.get(elem.messageSucess).should('be.visible').should('contain', 'Your order has been dispatched, and will arrive just as fast as the pony can get there!');
+    }
+
+    titleCheckoutComplete() {
+        cy.get(elem.title_Checkout_Complete).should('be.visible').should('contain', 'Checkout: Complete!');
+    }
 }
 
 export default new checkout();
