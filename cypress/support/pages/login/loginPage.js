@@ -10,8 +10,8 @@ class login{
     }
 
     typeCredentials(){
-        cy.get(elem.username).type(Cypress.env('USERNAME'))
-        cy.get(elem.password).type(Cypress.env('PASSWORD'))
+        cy.get(elem.username).type(Cypress.env('USERNAME'), { log: false })
+        cy.get(elem.password).type(Cypress.env('PASSWORD'), { log: false })
         cy.get(elem.loginButton).click()
     }
     
