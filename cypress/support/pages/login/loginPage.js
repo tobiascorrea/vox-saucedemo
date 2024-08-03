@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const elem = require('../../pages/login/elements').ELEMENTS
+const elem = require('./elementsLogin').ELEMENTS
 
 class login{
 

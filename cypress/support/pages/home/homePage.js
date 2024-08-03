@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-const elem = require('../../pages/home/elements').ELEMENTS
+const elem = require('./elementsHome').ELEMENTS
 
 class home{
     homePageIsVisible(){
