@@ -9,6 +9,7 @@
   "author": "Tobias Correa Camilo",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^13.13.2"
+    "cypress": "^13.13.2",
+    "faker": "^6.6.6"
   }
 }

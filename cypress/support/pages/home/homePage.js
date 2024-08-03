@@ -5,7 +5,6 @@ const elem = require('./elementsHome').ELEMENTS
 class home{
     homePageIsVisible(){
         cy.get(elem.home_title).should('contain', 'Products')
-        //cy.get(elem.cart).should('to.exist')
     }
     
     homePageIsNotVisible(){
