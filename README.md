@@ -43,7 +43,4 @@ To run the tests, follow these steps:
 
 -Make sure you have NODE.JS installed on your machine before running the NPM commands.
 
-## Tecnologies
-
-![alt text](image.png)  ![alt text](image-1.png)
 
