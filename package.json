@@ -9,7 +9,11 @@
   "author": "Tobias Correa Camilo",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^13.13.2",
-    "faker": "^6.6.6"
+    "cypress": "^13.13.2"
+  },
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^6.0.2",
+    "@faker-js/faker": "^8.4.1",
+    "webpack": "^5.93.0"
   }
 }

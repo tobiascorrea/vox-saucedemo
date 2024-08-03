@@ -1,28 +1,27 @@
 /// <reference types="cypress" />
 
-const elem = require('./elementsHome').ELEMENTS
+const elem = require('./elementsProduscts').ELEMENTS
 
-class home{
-    homePageIsVisible(){
+class ProductPage {
+    homePageIsVisible() {
         cy.get(elem.home_title).should('contain', 'Products')
     }
-    
-    homePageIsNotVisible(){
+
+    homePageIsNotVisible() {
         cy.get(elem.home_title).should('not.to.exist')
     }
 
-    productsAreVisible(){
+    productsAreVisible() {
         cy.get(elem.item_container).should('be.visible')
     }
 
-    addItemToCart(){
+    addItemToCart() {
         cy.get(elem.add_to_cart_button).click()
     }
 
-    showCartBadge(){
-        cy.get(elem.cart_badge).should('be.visible')
+    clickIconCart() {
+        cy.get(elem.cart_link).click()
     }
-
 }
 
-export default new home()
+export default new ProductPage()

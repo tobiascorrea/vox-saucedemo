@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import loginPage from '../support/pages/login/loginPage';
-import homePage from '../support/pages/home/homePage';
+import productPage from '../support/pages/products/ProductPage';
 
 
 describe('Página de Login', () => {
@@ -26,7 +26,7 @@ describe('Página de Login', () => {
     
         it('Então a página principal (Home) deve aparecer', () => {
             loginPage.typeCredentialsAndLogin()
-            homePage.homePageIsVisible()
+            productPage.homePageIsVisible()
         });
 
     });
@@ -47,7 +47,7 @@ describe('Página de Login', () => {
     
         it('Então a página principal (Home) não deve aparecer', () => {
             loginPage.typeCredentialsAndLoginError()
-            homePage.homePageIsNotVisible()
+            productPage.homePageIsNotVisible()
         });
 
     });
@@ -57,7 +57,7 @@ describe('Página de Login', () => {
         it('Dado que o usuário esteja logado na apliação', () => {
             loginPage.validateLoginPage()
             loginPage.typeCredentialsAndLogin()
-            homePage.homePageIsVisible()
+            productPage.homePageIsVisible()
         });
 
         it('E clica na opção "Logoff" dentro do menu hambúrguer no canto superior esquerdo da tela', () => {
