@@ -13,23 +13,28 @@ describe('Página de checkout', () => {
         loginPage.validateLoginPage()
         loginPage.typeCredentialsAndLogin()
     });
-    
+
+    const addItemToCartAndGoToCheckout = () => {
+        productPage.addItemToCart()
+        productPage.clickIconCart()
+        cartPage.clickButtonCheckout()
+    };
+
     context('Realizando checkout com sucesso', () => {
-        
+
         it('Dado que o usuário acesse a pagina de produtos', () => {
             productPage.homePageIsVisible()
-            
         });
 
-        it('E visualize a lista de produtos"', () => {
+        it('E visualize a lista de produtos', () => {
             productPage.productsAreVisible()
         });
 
-        it('E adiciona um item ao carrinho"', () => {
+        it('E adiciona um item ao carrinho', () => {
             productPage.addItemToCart()
         });
 
-        it('E visualiza que o item foi adicionado com sucesso ao carrinho"', () => {
+        it('E visualiza que o item foi adicionado com sucesso ao carrinho', () => {
             cartPage.addItemFromCart()
             cartPage.validateAddedItemFromCart()
         });
@@ -42,31 +47,21 @@ describe('Página de checkout', () => {
         });
 
         it('E preenche o formulário de checkout', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
+            addItemToCartAndGoToCheckout()
             checkoutPage.fillForm()
         });
 
         it('Quando clico no botão "CONTINUE"', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
+            addItemToCartAndGoToCheckout()
             checkoutPage.clickButtonContinue()
         });
 
         it('Então devo ser redirecionado para a tela de "Checkout: Overview" com sucesso', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
+            addItemToCartAndGoToCheckout()
             checkoutPage.fillForm()
             checkoutPage.clickButtonContinue()
             overviewPage.overviewPageIsVisible()
-    
-
-
         });
-
 
     });
 

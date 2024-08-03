@@ -13,23 +13,30 @@ describe('Página de Overview', () => {
         loginPage.validateLoginPage()
         loginPage.typeCredentialsAndLogin()
     });
+
+    const addItemToCartAndGoToCheckout = () => {
+        productPage.addItemToCart()
+        productPage.clickIconCart()
+        cartPage.clickButtonCheckout()
+        checkoutPage.fillForm()
+        checkoutPage.clickButtonContinue()
+    };
     
     context('Finalizando uma compra com sucesso', () => {
         
         it('Dado que o usuário acesse a pagina de produtos', () => {
             productPage.homePageIsVisible()
-            
         });
 
-        it('E visualize a lista de produtos"', () => {
+        it('E visualize a lista de produtos', () => {
             productPage.productsAreVisible()
         });
 
-        it('E adiciona um item ao carrinho"', () => {
+        it('E adiciona um item ao carrinho', () => {
             productPage.addItemToCart()
         });
 
-        it('E visualiza que o item foi adicionado com sucesso ao carrinho"', () => {
+        it('E visualiza que o item foi adicionado com sucesso ao carrinho', () => {
             cartPage.addItemFromCart()
             cartPage.validateAddedItemFromCart()
         });
@@ -42,37 +49,20 @@ describe('Página de Overview', () => {
         });
 
         it('E preenche o formulário de checkout', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
-            checkoutPage.fillForm()
+            addItemToCartAndGoToCheckout()
         });
 
         it('E clico no botão "CONTINUE"', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
-            checkoutPage.clickButtonContinue()
+            addItemToCartAndGoToCheckout()
         });
 
         it('E sou redirecionado para a tela de "Checkout: Overview" com sucesso', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
-            checkoutPage.fillForm()
-            checkoutPage.clickButtonContinue()
+            addItemToCartAndGoToCheckout()
             overviewPage.overviewPageIsVisible()
-    
-
-
         });
 
         it('E visualizo os dados contidos na tela de "Checkout: Overview"', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
-            checkoutPage.fillForm()
-            checkoutPage.clickButtonContinue()
+            addItemToCartAndGoToCheckout()
             overviewPage.overviewPageIsVisible()
             overviewPage.overviewproductsAreVisible()
             overviewPage.quantityChosen()
@@ -81,20 +71,10 @@ describe('Página de Overview', () => {
             overviewPage.priceTotal()
             overviewPage.taxa()
             overviewPage.valueTotal()
-            
-          
-           
-    
-
-
         });
 
         it('Quando clico no botão "FINISH"', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
-            checkoutPage.fillForm()
-            checkoutPage.clickButtonContinue()
+            addItemToCartAndGoToCheckout()
             overviewPage.overviewPageIsVisible()
             overviewPage.overviewproductsAreVisible()
             overviewPage.quantityChosen()
@@ -104,15 +84,10 @@ describe('Página de Overview', () => {
             overviewPage.taxa()
             overviewPage.valueTotal()
             overviewPage.buttonFinish()
-            
-           });
+        });
 
-           it('Então devo visualizar a tela de "Checkout: Complete!"', () => {
-            productPage.addItemToCart()
-            productPage.clickIconCart()
-            cartPage.clickButtonCheckout()
-            checkoutPage.fillForm()
-            checkoutPage.clickButtonContinue()
+        it('Então devo visualizar a tela de "Checkout: Complete!"', () => {
+            addItemToCartAndGoToCheckout()
             overviewPage.overviewPageIsVisible()
             overviewPage.overviewproductsAreVisible()
             overviewPage.quantityChosen()
@@ -125,9 +100,7 @@ describe('Página de Overview', () => {
             checkoutPage.checkoutCompleteIsVisible()
             checkoutPage.messageSucess()
             checkoutPage.titleCheckoutComplete()
-            
-           });
-
+        });
 
     });
 

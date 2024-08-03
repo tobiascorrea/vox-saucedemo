@@ -12,7 +12,7 @@ describe('Página principal | Produtos', () => {
         loginPage.typeCredentialsAndLogin()
     });
     
-    context('Adicionando item no carrinho', () => {
+    context('Acessa a Pagina de Produtos, visualiza os itens e adiciona um item ao carrinho', () => {
         
         it('Dado que o usuário está na página principal (Produtos)', () => {
             productPage.homePageIsVisible()

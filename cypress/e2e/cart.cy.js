@@ -11,24 +11,26 @@ describe('Página do carrinho', () => {
         loginPage.validateLoginPage()
         loginPage.typeCredentialsAndLogin()
     });
-    
+
+    const addItemAndNavigateToCart = () => {
+        productPage.addItemToCart()
+        cartPage.navigateToCart()
+    };
+
     context('Removendo item do carrinho', () => {
-        
+
         it('Dado que o usuário esteja na página do carrinho', () => {
-            productPage.addItemToCart()
-            cartPage.navigateToCart()
+            addItemAndNavigateToCart()
             cartPage.cartPageValidate()
         });
 
-        it('E clica em "REMOVE"', () => {
-            productPage.addItemToCart()
-            cartPage.navigateToCart()
+        it('E clica em "REMOVE" para remover um item do carrinho', () => {
+            addItemAndNavigateToCart()
             cartPage.removeFromCart()
         });
 
-        it('Então o item deverá ter sido removido', () => {
-            productPage.addItemToCart()
-            cartPage.navigateToCart()
+        it('Então o item deverá ter sido removido com sucesso', () => {
+            addItemAndNavigateToCart()
             cartPage.removeFromCart()
             cartPage.validateRemovedItemFromCart()
         });
