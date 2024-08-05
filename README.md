@@ -29,7 +29,7 @@ To run the tests, follow these steps:
 1. Clone this repository to your local machine: `https://github.com/tobiascorrea/vox-saucedemo`
 2. Navigate to the project directory.
 3. Install Dependencies using `npm install`. 
-4. Start Cypress by running mode interactive `npx cypress open`.  
+4. Start Cypress by running mode interactive `npm run test:open`.  
 5. Start Cypress by running mode headless `npm run test`. 
 
 

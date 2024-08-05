@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Teste tecnico Vox Tecnologia",
   "main": "index.js",
-  "scripts": {
-    "test": "cypress run"
+ "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open"
   },
   "author": "Tobias Correa Camilo",
   "license": "MIT",
