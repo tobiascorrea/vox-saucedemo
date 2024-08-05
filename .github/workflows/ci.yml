@@ -7,6 +7,10 @@ on:
   pull_request:
     branches:
       - main
+  workflow_run:
+    workflows: ["Vox Tests CI"]
+    types:
+      - completed
 
 jobs:
   build:
