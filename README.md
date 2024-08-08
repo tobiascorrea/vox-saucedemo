@@ -32,6 +32,9 @@ To run the tests, follow these steps:
 4. Start Cypress by running mode interactive `npx cypress open`.  
 5. Start Cypress by running mode headless `npm run test`. 
 
+## 👩‍💻 Technologies
+
+![alt text](image.png) ![alt text](image-1.png)
 
 ## Design Pattern
 
